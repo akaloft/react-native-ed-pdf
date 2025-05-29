@@ -1,5 +1,6 @@
 package com.edpdfviewer
 
+import com.facebook.react.bridge.ReadableMap
 import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.annotations.ReactProp
@@ -13,10 +14,12 @@ class PdfViewerManager : SimpleViewManager<PdfViewerView>() {
     }
 
     @ReactProp(name = "source")
-    fun setSource(view: PdfViewerView, source: Map<String, String>) {
-        val uri = source["uri"]
-        if (!uri.isNullOrEmpty()) {
-            view.loadPdfFromUrl(uri)
+    fun setSource(view: PdfViewerView, source: ReadableMap?) {
+        source?.let { map ->
+            if (map.hasKey("uri")) {
+                val uri = map.getString("uri")
+                uri?.let { view.loadPdfFromUrl(it) }
+            }
         }
     }
 }

@@ -1,9 +1,21 @@
 import React from 'react';
-import { requireNativeComponent, ViewProps } from 'react-native';
+import type { ViewProps } from 'react-native';
+import EdPdfViewerNativeComponent from './EdPdfViewerNativeComponent';
 import type { PdfViewerProps } from './types';
 
-const NativePdfViewer = requireNativeComponent<PdfViewerProps>('EdPdfViewer');
-
 export const PdfViewer = (props: PdfViewerProps & ViewProps) => {
-  return <NativePdfViewer {...props} />;
+  return (
+    <EdPdfViewerNativeComponent
+      {...props}
+      onLoadComplete={props.onLoadComplete ? (event) => {
+        props.onLoadComplete?.(event.nativeEvent.pageCount);
+      } : undefined}
+      onError={props.onError ? (event) => {
+        props.onError?.(event.nativeEvent.error);
+      } : undefined}
+      onDownloadComplete={props.onDownloadComplete ? (event) => {
+        props.onDownloadComplete?.(event.nativeEvent.localPath);
+      } : undefined}
+    />
+  );
 };

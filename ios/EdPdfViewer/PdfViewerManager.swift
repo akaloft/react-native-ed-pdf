@@ -11,4 +11,16 @@ class EdPdfViewerManager: RCTViewManager {
   override static func requiresMainQueueSetup() -> Bool {
     return true
   }
+  
+  @objc override func constantsToExport() -> [AnyHashable : Any]! {
+    return [:]
+  }
+}
+
+// Export the module
+@objc(EdPdfViewerManagerBridge)
+class EdPdfViewerManagerBridge: NSObject {
+  @objc static func requiresMainQueueSetup() -> Bool {
+    return true
+  }
 }
