@@ -1,0 +1,77 @@
+{
+  "name": "react-native-ed-pdf",
+  "version": "1.0.0",
+  "description": "A lightweight, cross-platform PDF viewer for React Native using the New Architecture (Fabric + TurboModules)",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "prepare": "bob build",
+    "release": "release-it",
+    "typescript": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "build": "bob build"
+  },
+  "keywords": [
+    "react-native",
+    "pdf",
+    "pdf-viewer",
+    "fabric",
+    "turbomodules",
+    "new-architecture"
+  ],
+  "repository": "https://github.com/your-username/react-native-ed-pdf",
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-username/react-native-ed-pdf/issues"
+  },
+  "homepage": "https://github.com/your-username/react-native-ed-pdf#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@types/react": "^18.2.6",
+    "@types/react-native": "^0.72.2",
+    "eslint": "^8.19.0",
+    "react": "18.2.0",
+    "react-native": "0.72.3",
+    "react-native-builder-bob": "^0.21.3",
+    "release-it": "^15.0.0",
+    "typescript": "5.0.4"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "engines": {
+    "node": ">= 18.0.0"
+  },
+  "packageManager": "yarn@1.22.15",
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "codegenConfig": {
+    "name": "RNEdPdfViewerSpec",
+    "type": "modules",
+    "jsSrcsDir": "src"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}
