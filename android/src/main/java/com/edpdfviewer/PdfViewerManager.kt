@@ -1,3 +1,5 @@
+@file:Suppress("UNRESOLVED_REFERENCE")
+
 package com.edpdfviewer
 
 import com.facebook.react.bridge.ReadableMap
