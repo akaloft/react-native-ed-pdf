@@ -1,4 +1,12 @@
+#import <React/RCTBridgeModule.h>
 #import <React/RCTViewManager.h>
+#import <React/RCTUIManager.h>
+
+#if __has_include(<React/RCTBridgeModule.h>)
+  #import <React/RCTBridgeModule.h>
+#elif __has_include("RCTBridgeModule.h")
+  #import "RCTBridgeModule.h"
+#endif
 
 @interface RCT_EXTERN_MODULE(EdPdfViewerManager, RCTViewManager)
 

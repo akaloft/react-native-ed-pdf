@@ -16,9 +16,15 @@ Pod::Spec.new do |s|
   s.source       = { :git => package["repository"], :tag => "#{s.version}" }
 
   s.source_files = "ios/EdPdfViewer/**/*.{h,m,mm,swift}"
+  s.requires_arc = true
 
-  # React Native dependency
-  s.dependency "React-Core"
+  # Install dependencies
+  if respond_to?(:install_modules_dependencies, true)
+    install_modules_dependencies(s)
+  else
+    s.dependency "React-Core"
+    s.dependency "React-RCTImage"
+  end
 
   # New Architecture support
   if ENV['RCT_NEW_ARCH_ENABLED'] == '1' then
