@@ -1,16 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "lib",
+    "outDir": "dist",
     "declaration": true,
-    "declarationDir": "lib/typescript"
+    "declarationDir": "dist",
+    "emitDeclarationOnly": false
   },
-  "exclude": [
-    "node_modules",
-    "lib",
-    "example",
-    "**/__tests__/**/*",
-    "**/__fixtures__/**/*",
-    "**/__mocks__/**/*"
-  ]
-} 
+  "include": ["src", "index.ts"]
+}

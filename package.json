@@ -9,7 +9,7 @@
     "release": "release-it",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "build": "bob build"
+    "build": "tsc -p tsconfig.build.json"
   },
   "keywords": [
     "react-native",
@@ -20,12 +20,12 @@
     "new-architecture"
   ],
   "repository": "https://github.com/your-username/react-native-ed-pdf",
-  "author": "Your Name <your.email@example.com>",
+  "author": "Efe Derilgen efederilgen@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/your-username/react-native-ed-pdf/issues"
+    "url": "https://github.com/akaloft/react-native-ed-pdf/issues"
   },
-  "homepage": "https://github.com/your-username/react-native-ed-pdf#readme",
+  "homepage": "https://github.com/akaloft/react-native-ed-pdf#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
